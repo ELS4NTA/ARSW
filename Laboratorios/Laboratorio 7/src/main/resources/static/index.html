@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blueprints</title>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" />
+    <script src="js/apiclient.js"></script>
+    <script src="js/apimock.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body onLoad="app.addListenerToCanvas()">
+    <main class="container mt-5">
+      <h1 class="text-center mb-5">Blueprints</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="mb-3">Author</h2>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="search-author" />
+            <button class="btn btn-info" id="get-blueprints" onclick="app.getBlueprints()">Get Blueprints</button>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">
+              <h2 id="author-name" class="card-title"></h2>
+            </div>
+            <div class="card-body">
+              <table class="table" id="blueprints-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Number of points</th>
+                    <th scope="col">Open</th>
+                  </tr>
+                </thead>
+                <tbody ></tbody>
+              </table>
+              <h2 id="total-user-points">Total user points: 0</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="input-group mb-3" style="width: 26.5rem;">
+            <button id="create-blueprint-btn" class="btn btn-info" onclick="app.createBlueprint()">Create new blueprint</button>
+            <input id="new-name" type="text" class="form-control" />
+          </div>
+          <h2 id="name-blueprint" class="mb-3"></h2>
+          <canvas id="canvas" width="420" height="420" class="border"></canvas>
+          <div class="buttons">
+            <button class="btn btn-success" onclick="app.saveAndUpdate()">Save/Update</button>
+            <button class="btn btn-danger" onclick="app.delete()">Delete</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

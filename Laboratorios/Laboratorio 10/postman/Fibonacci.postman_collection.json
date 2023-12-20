@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "329a103a-2a0a-4e74-9f38-383aa0e9e960",
+		"name": "ARSW_SCALABILITY_LAB_II_AZURE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "fibonacci",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body" : {
+					"mode": "raw",
+					"raw" : {"nth": 1000000}
+				},
+				"url": {
+					"raw": "https://functionprojectfibonacciangiedaniel.azurewebsites.net/api/fibonacci",
+					"protocol": "https",
+					"host": [
+						"functionprojectfibonacciangiedaniel",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"fibonacci"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
